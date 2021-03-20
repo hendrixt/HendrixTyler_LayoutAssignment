@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_200">
+
+    <!-- TODO 01. Define the layout for the MainActivity here. -->
+    <!-- NOTE: Remember that in order to include some GUI components you will have to use the Material library -->
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+           android:gravity="center"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <com.google.android.material.chip.ChipGroup
+               android:id="@+id/chipGroup"
+               android:paddingLeft="@dimen/spacing_large"
+               android:paddingTop="@dimen/spacing_mlarge"
+               android:paddingBottom="@dimen/spacing_mlarge"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <com.google.android.material.chip.Chip
+                   android:id="@+id/scan_chip"
+                   android:text="@string/scan_chip"
+                   app:chipIcon="@drawable/ic_center_focus_weak_chip"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   style="@style/Chip.Blue"/>
+
+               <com.google.android.material.chip.Chip
+                   android:id="@+id/top_up_chip"
+                   android:text="@string/top_up_chip"
+                   app:chipIcon="@drawable/ic_add_circle_chip"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   style="@style/Chip.Blue"/>
+
+               <com.google.android.material.chip.Chip
+                   android:id="@+id/send_chip"
+                   android:text="@string/send_chip"
+                   app:chipIcon="@drawable/ic_open_in_new_chip"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   style="@style/Chip.Blue"/>
+
+               <com.google.android.material.chip.Chip
+                   android:id="@+id/request_chip"
+                   android:text="@string/request_chip"
+                   app:chipIcon="@drawable/ic_open_in_new_rotated_chip"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   style="@style/Chip.Blue"/>
+           </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardView.White"
+            android:layout_margin="@dimen/spacing_middle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_view_constraint_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_xmedium">
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/spacing_xxlarge"
+                    android:layout_height="@dimen/spacing_xxlarge"
+                    android:layout_marginStart="@dimen/spacing_xxmedium"
+                    android:layout_marginLeft="@dimen/spacing_xxmedium"
+                    android:layout_marginTop="@dimen/spacing_xxmedium"
+                    android:src="@drawable/ic_phone_android"
+                    app:layout_constraintEnd_toStartOf="@id/pulsa_amp_data"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/pulsa_amp_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_xxmedium"
+                    android:layout_marginTop="@dimen/spacing_xsmall"
+                    android:text="@string/pulsa_amp_data"
+                    android:textSize="@dimen/text_1"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@id/imageView" />
+
+                <TextView
+                    android:id="@+id/bounus_pulsa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_xxmedium"
+                    android:gravity="left"
+                    android:text="@string/bonus_pulsa_50"
+                    android:textColor="@color/colorAccentLight"
+                    android:textSize="@dimen/text_2"
+                    app:layout_constraintStart_toEndOf="@id/imageView"
+                    app:layout_constraintTop_toBottomOf="@id/pulsa_amp_data" />
+
+                <Button
+                    android:id="@+id/buy_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spacing_xxxlarge"
+                    android:layout_marginRight="@dimen/spacing_xxmedium"
+                    android:text="@string/buy_now"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    tools:textSize="@dimen/text_1" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_mlarge"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/spacing_middle"
+                    app:layout_constraintTop_toBottomOf="@id/imageView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/bulb"
+                            android:layout_width="@dimen/spacing_xxlarge"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:src="@drawable/ic_bulb"
+                            app:layout_constraintEnd_toStartOf="@id/cashout"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/electric_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="Electric.."
+                            app:layout_constraintEnd_toEndOf="@id/bulb"
+                            app:layout_constraintStart_toStartOf="@id/bulb"
+                            app:layout_constraintTop_toBottomOf="@id/bulb" />
+
+                        <ImageView
+                            android:id="@+id/cashout"
+                            android:layout_width="@dimen/spacing_xxlarge"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:src="@drawable/ic_monetization_on"
+                            app:layout_constraintEnd_toStartOf="@id/games"
+                            app:layout_constraintStart_toEndOf="@id/bulb"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cashout"
+                            app:layout_constraintEnd_toEndOf="@id/cashout"
+                            app:layout_constraintStart_toStartOf="@id/cashout"
+                            app:layout_constraintTop_toBottomOf="@id/cashout" />
+
+                        <ImageView
+                            android:id="@+id/games"
+                            android:layout_width="@dimen/spacing_xxlarge"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:src="@drawable/ic_dpad"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/more"
+                            app:layout_constraintStart_toEndOf="@id/cashout"
+                            android:contentDescription="TODO" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/games"
+                            app:layout_constraintEnd_toEndOf="@id/games"
+                            app:layout_constraintStart_toStartOf="@id/games"
+                            app:layout_constraintTop_toBottomOf="@id/games"/>
+
+                        <ImageView
+                            android:id="@+id/more"
+                            android:layout_width="@dimen/spacing_xxlarge"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:src="@drawable/ic_more_horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/games"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/see_all"
+                            app:layout_constraintEnd_toEndOf="@id/more"
+                            app:layout_constraintStart_toStartOf="@id/more"
+                            app:layout_constraintTop_toBottomOf="@id/more" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/discount_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+
+            <Button
+                android:id="@+id/no_discount_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_discount"
+                style="@style/Button.Blue.Group"/>
+
+            <Button
+                android:id="@+id/discount_bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/discount"
+                style="@style/Button.Blue.Group"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_middle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardView.White"
+            android:layout_margin="@dimen/spacing_middle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/invoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_xmedium"
+                    android:padding="@dimen/spacing_xxmedium"
+                    android:text="@string/invoice"
+                    android:textSize="@dimen/text_3"
+                    app:drawableEndCompat="@drawable/ic_swap_vert"
+                    app:drawableRightCompat="@drawable/ic_swap_vert"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <View
+                    android:id="@+id/invoice_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_xxsmall"
+                    android:background="@android:color/darker_gray"
+                    android:paddingTop="@dimen/spacing_xxmedium"
+                    android:paddingBottom="@dimen/spacing_xxmedium"
+                    app:layout_constraintTop_toBottomOf="@id/invoice" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/product_01"
+                    style="@style/CheckBox.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_large"
+                    android:padding="@dimen/spacing_middle"
+                    android:text="@string/product_1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/product_02"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invoice_line"
+                    app:layout_constraintVertical_chainStyle="spread" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dollar_symbol"
+                    android:paddingTop="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintTop_toTopOf="@id/product_01_input_layout"
+                    app:layout_constraintBottom_toBottomOf="@id/product_01_input_layout"
+                    app:layout_constraintEnd_toStartOf="@id/product_01_input_layout"
+                    android:textSize="@dimen/text_4"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/product_01_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/layout_width"
+                    android:layout_height="@dimen/layout_height"
+                    app:boxBackgroundColor="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/product_01"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/product_01"
+                    android:layout_marginRight="@dimen/spacing_middle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/product_01_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/product_02"
+                    style="@style/CheckBox.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_large"
+                    android:padding="@dimen/spacing_middle"
+                    android:text="@string/product_2"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/product_03"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/product_01" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dollar_symbol"
+                    android:paddingTop="@dimen/spacing_middle"
+                    android:layout_marginRight="@dimen/spacing_middle"
+                    app:layout_constraintTop_toTopOf="@id/product_02_input_layout"
+                    app:layout_constraintBottom_toBottomOf="@id/product_02_input_layout"
+                    app:layout_constraintEnd_toStartOf="@id/product_02_input_layout"
+                    android:textSize="@dimen/text_4"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/product_02_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/layout_width"
+                    android:layout_height="@dimen/layout_height"
+                    android:layout_marginRight="@dimen/spacing_middle"
+                    app:boxBackgroundColor="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/product_02"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/product_02">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/product_02_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/product_03"
+                    style="@style/CheckBox.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_large"
+                    android:padding="@dimen/spacing_middle"
+                    android:text="@string/product_3"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/product_04"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/product_02" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/spacing_middle"
+                    android:paddingTop="@dimen/spacing_middle"
+                    android:text="@string/dollar_symbol"
+                    android:textSize="@dimen/text_4"
+                    app:layout_constraintBottom_toBottomOf="@id/product_03_input_layout"
+                    app:layout_constraintEnd_toStartOf="@id/product_03_input_layout"
+                    app:layout_constraintTop_toTopOf="@+id/product_03_input_layout" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/product_03_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/layout_width"
+                    android:layout_height="@dimen/layout_height"
+                    android:layout_marginRight="@dimen/spacing_middle"
+                    app:boxBackgroundColor="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/product_03"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/product_03">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/product_03_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/product_04"
+                    style="@style/CheckBox.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_large"
+                    android:padding="@dimen/spacing_middle"
+                    android:text="@string/product_4"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/product_03" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dollar_symbol"
+                    android:paddingTop="@dimen/spacing_middle"
+                    android:layout_marginRight="@dimen/spacing_middle"
+                    app:layout_constraintTop_toTopOf="@id/product_04_input_layout"
+                    app:layout_constraintBottom_toBottomOf="@id/product_04_input_layout"
+                    app:layout_constraintEnd_toStartOf="@id/product_04_input_layout"
+                    android:textSize="@dimen/text_4"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/product_04_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/layout_width"
+                    android:layout_height="@dimen/layout_height"
+                    android:layout_marginRight="@dimen/spacing_middle"
+                    app:boxBackgroundColor="@color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/product_04"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/product_04">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/product_04_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_mxlarge">
+
+            <Button
+                android:id="@+id/calculate"
+                style="@style/Button.Outlined.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_mlarge"
+                android:text="@string/calculate_total_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="calculateTotal"/>
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_mxlarge"
+                android:text="@string/total"
+                android:textStyle="bold"
+                android:textColor="@color/overlay_dark_90"
+                android:textSize="@dimen/text_4"
+                app:layout_constraintBottom_toBottomOf="@id/calculate"
+                app:layout_constraintLeft_toRightOf="@id/calculate"
+                app:layout_constraintTop_toTopOf="@id/calculate" />
+
+            <TextView
+                android:id="@+id/product_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zero_total"
+                android:textSize="@dimen/text_4"
+                app:layout_constraintTop_toTopOf="@id/calculate"
+                app:layout_constraintBottom_toBottomOf="@id/calculate"
+                app:layout_constraintLeft_toRightOf="@id/total"
+                android:layout_marginLeft="@dimen/spacing_smlarge"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>
